@@ -35,7 +35,7 @@ function youGuessed() {
     var youPick = String.fromCharCode(event.keyCode).toLowerCase()
     guessedAlready.push(youPick)
     console.log(guessedAlready)
-    document.getElementById("guessedAlready-text").innerHTML = guessedAlready.join(youPick)
+    document.getElementById("guessedAlready-text").innerHTML = guessedAlready
 
 }
 
