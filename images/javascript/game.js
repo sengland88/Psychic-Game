@@ -11,8 +11,10 @@ console.log(randomLetter)
 
 function restart() {
     guessesLeft = 10;
+    guessedAlready = [];
     randomLetter = theChoices[Math.floor(Math.random() * theChoices.length)];
     document.getElementById("guessesLeft-text").innerHTML = guessesLeft
+    document.getElementById("guessedAlready-text").innerHTML = guessedAlready
     console.log(randomLetter)
 }
 
@@ -32,15 +34,15 @@ function lossesUp() {
 }
 
 function youGuessed() {
-    var youPick = String.fromCharCode(event.keyCode).toLowerCase()
+    var youPick = event.key.toLowerCase()
     guessedAlready.push(youPick)
     console.log(guessedAlready)
     document.getElementById("guessedAlready-text").innerHTML = guessedAlready
 
 }
 
-document.onkeypress = function() {
-    var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase()
+document.onkeypress = function(event) {
+    var letterGuessed = event.key.toLowerCase()
     console.log(letterGuessed)
     youGuessed()
 
